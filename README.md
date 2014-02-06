@@ -31,7 +31,10 @@ built, the program will start generating the RDF.
 The process is less than optimal, and Generating this much RDF takes a long
 time.  In order to terminate the generation cleanly, send a USR1 signal to the
 application.
-eg. "killall -USR1 numgen"
+eg.
+```bash
+"killall -USR1 numgen"
+```
 
 Terminating early will finish writing the properties for the current number,
 and write the correct XML tags to indicate the end of the document.
