@@ -1,5 +1,5 @@
 /*
- * Copyright 2005 Paul Gearon
+ * Copyright 2005 Paula Gearon
  *
  * This file is part of rdf-generator.
  *

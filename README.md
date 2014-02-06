@@ -33,7 +33,7 @@ time.  In order to terminate the generation cleanly, send a USR1 signal to the
 application.
 eg.
 ```bash
-"killall -USR1 numgen"
+killall -USR1 numgen
 ```
 
 Terminating early will finish writing the properties for the current number,
