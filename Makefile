@@ -1,6 +1,6 @@
 # for 32 but machines use:
-# CC = g++ -O3
-CC = g++ -arch x86_64 -O3
+CC = g++ -O3
+# CC = g++ -arch x86_64 -O3
 
 all: test numgen
 
