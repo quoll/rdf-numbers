@@ -25,13 +25,13 @@
 
 using namespace std;
 
-string place_label(int pos) throw (format_exception);
+string place_label(int pos);
 string group_label(char* buffer, bool first = false);
 inline string digit(int d);
 inline string teen_digit(int d);
 inline string ten_digit(int d);
 
-string calc_label(unsigned long i) throw (format_exception) {
+string calc_label(unsigned long i) {
   ostringstream ss;
   ss << i;
   string s = ss.str();
@@ -64,7 +64,7 @@ string calc_label(unsigned long i) throw (format_exception) {
 }
 
 
-string place_label(int pos) throw (format_exception) {
+string place_label(int pos) {
   assert(pos % 3 == 0);
   switch (pos) {
     case 0:

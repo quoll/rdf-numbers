@@ -27,11 +27,11 @@
 struct format_exception : public std::exception {
   std::string m_desc;
   format_exception(const std::string& desc) : m_desc(desc) {}
-  virtual ~format_exception() throw() {}
+  virtual ~format_exception() {}
   virtual const char* what() { return m_desc.c_str(); }
 };
 
-std::string calc_label(unsigned long i) throw (format_exception);
+std::string calc_label(unsigned long i);
 
 #endif  // __LABELS_H
 

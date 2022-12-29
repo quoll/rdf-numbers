@@ -88,7 +88,7 @@ void print_footer() {
 
 
 void print_description(unsigned long i) {
-  std::cout << "<math:NaturalNumber rdf:about=\"&math;" << i << "\">\n";
+  std::cout << "<math:NaturalNumber rdf:about=\"&math;n" << i << "\">\n";
   
   std::cout << "  <rdf:value rdf:datatype=\"&xsd;integer\">" << i << "</rdf:value>\n";
 
@@ -98,7 +98,7 @@ void print_description(unsigned long i) {
     std::cout << "  <math:roman>" << roman(i).c_str() << "</math:roman>\n";
 
   if (squarable(i))
-    std::cout << "  <math:square rdf:resource=\"&math;" << (i * i) << "\"/>\n";
+    std::cout << "  <math:square rdf:resource=\"&math;n" << (i * i) << "\"/>\n";
 
   if (i != 1 && is_prime(i))
     std::cout << "  <rdf:type rdf:resource=\"&math;PrimeNumber\"/>\n";
@@ -121,13 +121,11 @@ bool squarable(unsigned long i) {
 
 
 void print_factors(unsigned long i) {
-  std::cout << "  <math:primeFactorization>\n";
-  std::cout << "    <rdf:Bag>\n";
+  std::cout << "  <math:primeFactorization rdf:parseType=\"Collection\">\n";
   std::vector<unsigned long> fc = factors(i);
   for (std::vector<unsigned long>::const_iterator it = fc.begin(); it != fc.end(); it++) {
-    std::cout << "      <rdf:li rdf:resource=\"&math;" << *it << "\"/>\n";
+    std::cout << "    <rdf:Description rdf:about=\"http://mulgara.org/math#n" << *it << "\"/>\n";
   }
-  std::cout << "    </rdf:Bag>\n";
   std::cout << "  </math:primeFactorization>\n";
 }
 
