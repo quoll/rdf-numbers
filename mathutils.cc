@@ -70,6 +70,19 @@ bool triangular(unsigned long i) {
   return false;
 }
 
+// note: the following only works for monotonically increasing tests of i
+bool square(unsigned long i) {
+  static unsigned long next = 1;
+  static unsigned long next_sq = 1;
+  if (next_sq == i) {
+    next++;
+    next_sq = next * next;
+    return true;
+  }
+  return false;
+}
+
+
 
 const unsigned long c_limit = 0x7FFFFFFF;
 const unsigned long c_hlimit = 0x3FFFFFFF;

@@ -27,6 +27,7 @@ typedef void (*callback_t)(unsigned int i);
 void init_math(callback_t callback, int freq = 100000);
 bool perfect(unsigned long i);
 bool triangular(unsigned long i);
+bool square(unsigned long i);
 std::vector<unsigned long> factors(unsigned long i);
 bool is_prime(unsigned long i);
 

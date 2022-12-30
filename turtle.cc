@@ -86,6 +86,8 @@ void print_description(unsigned long i) {
 
   if (triangular(i)) std::cout << ", :TriangularNumber";
   
+  if (square(i)) std::cout << ", :SquareNumber";
+
   if (i != 1 && is_prime(i)) std::cout << ", :PrimeNumber";
 
   std::cout << ";\n";
