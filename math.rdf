@@ -55,7 +55,7 @@
   <rdfs:subClassOf rdf:resource="&math;NaturalNumber"/>
   <rdfs:isDefinedBy rdf:resource="&math;"/>
   <rdfs:label>Prime Number</rdfs:label>
-  <rdfs:comment>The class of all natural numbers divisible only be 1 and itself.</rdfs:comment>
+  <rdfs:comment>The class of all natural numbers divisible only by 1 and itself.</rdfs:comment>
 </rdfs:Class>
 
 <rdfs:Class rdf:about="&math;TriangularNumber">
@@ -76,24 +76,24 @@
   <rdfs:isDefinedBy rdf:resource="&math;"/>
   <rdfs:label>Roman Numerals</rdfs:label>
   <rdfs:comment>The roman numeral representation of a Natural Number.</rdfs:comment>
-  <rdfs:range rdf:resource="&math;NaturalNumber"/>
-  <rdfs:domain rdf:resource="rdfs:Literal"/>
+  <rdfs:domain rdf:resource="&math;NaturalNumber"/>
+  <rdfs:range rdf:resource="rdfs:Literal"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="&math;square">
   <rdfs:isDefinedBy rdf:resource="&math;"/>
   <rdfs:label>Square</rdfs:label>
   <rdfs:comment>The square of a number.</rdfs:comment>
-  <rdfs:range rdf:resource="&math;Number"/>
   <rdfs:domain rdf:resource="&math;Number"/>
+  <rdfs:range rdf:resource="&math;Number"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="&math;primeFactorization">
   <rdfs:isDefinedBy rdf:resource="&math;"/>
   <rdfs:label>Factors</rdfs:label>
   <rdfs:comment>The prime factors of a natural number.</rdfs:comment>
-  <rdfs:range rdf:resource="&math;NaturalNumber"/>
-  <rdfs:domain rdf:resource="&rdf;Bag"/>
+  <rdfs:domain rdf:resource="&math;NaturalNumber"/>
+  <rdfs:range rdf:resource="&rdf;List"/>
 </rdf:Property>
 
 <!--
