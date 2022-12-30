@@ -2,10 +2,10 @@
 CC = g++ -O3
 # CC = g++ -arch x86_64 -O3
 
-all: test numgen
+all: test numgen ttlgen
 
 clean:
-	rm -f *.o numgen test
+	rm -f *.o numgen ttlgen test
 
 test: test.o labels.o mathutils.o roman.o
 	${CC} -o test test.o labels.o mathutils.o roman.o
@@ -13,11 +13,17 @@ test: test.o labels.o mathutils.o roman.o
 numgen: numgen.o labels.o mathutils.o roman.o
 	${CC} -o numgen numgen.o labels.o mathutils.o roman.o
 
+ttlgen: turtle.o labels.o mathutils.o roman.o
+	${CC} -o ttlgen turtle.o labels.o mathutils.o roman.o
+
 labels.o: labels.cc labels.h
 	${CC} -o labels.o labels.cc -c
 
 numgen.o: numgen.cc labels.h mathutils.h roman.h
 	${CC} -o numgen.o numgen.cc -c
+
+turtle.o: turtle.cc labels.h mathutils.h roman.h
+	${CC} -o turtle.o turtle.cc -c
 
 test.o: test.cc labels.h mathutils.h roman.h
 	${CC} -o test.o test.cc -c
